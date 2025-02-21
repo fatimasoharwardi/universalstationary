@@ -1,0 +1,40 @@
+.craft-supplies-section {
+    padding: 6rem 5% 4rem;
+    background: var(--light-bg);
+}
+
+/* ...copy section-header styles from notebooks.css... */
+
+.craft-supplies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.craft-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 2px solid transparent;
+}
+
+/* ...copy product-image styles from notebooks.css... */
+
+/* Hover Effects */
+.craft-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.craft-card:hover .product-image img {
+    transform: scale(1.15);
+}
+
+/* ...copy responsive styles from notebooks.css... */

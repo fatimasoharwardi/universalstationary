@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product-styles.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+    <script src="checkout.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!--navbar start-->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <div class="logo-container">
+                    <img src="Screenshot_2025-01-30-10-59-01-36-removebg-preview.png" alt="Universal Stationery" class="logo-img">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-universal">Universal</span>
+                    <span class="brand-stationery">STATIONERY</span>
+                </div>
+            </a>
+        </div>
+        <!-- Move menu icon to the right -->
+        <div class="nav-controls">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="menu-icon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="product.html" class="active"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html" ><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="nav-divider"></div>
+            <!-- Auth links will be moved here in mobile view -->
+            <div class="auth-nav">
+                <a href="#" class="auth-link login" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="#" class="auth-link signup" id="signupBtn">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+            <div class="nav-cart">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+        
+<!-- Add Cart Modal before closing body tag -->
+<div class="cart-modal">
+    <div class="cart-container">
+        <button class="close-cart">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2>Shopping Cart</h2>
+        <div class="cart-items">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$0.00</span>
+            </div>
+            <button class="checkout-btn">
+                Proceed to Checkout
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+    </header>
+    <!--navbar end-->
+    <!--product start-->
+    <div class="container">
+        <div class="content">
+            <h2>Our Products</h2>
+            <br>
+            <p>Discover our carefully curated collection of premium stationery items</p>
+        </div>
+
+        <!-- Add this before the filter-container div -->
+        <div class="search-wrapper">
+            <div class="search-container">
+                <input type="text" id="product-search" placeholder="Search products...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
+
+        <!-- Replace the existing filter-container div -->
+        <div class="filter-container">
+            <button class="scroll-btn prev" id="scrollPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="filter-scroll-container">
+                <div class="filter-buttons">
+                    <button class="btn1 active" data-filter="all">All Products</button>
+                    <button class="btn1" data-filter="notebooks">Notebooks</button>
+                    <button class="btn1" data-filter="pens">Pens</button>
+                    <button class="btn1" data-filter="art">Art Supplies</button>
+                    <button class="btn1" data-filter="office">Office</button>
+                    <button class="btn1" data-filter="school">School</button>
+                    <button class="btn1" data-filter="drawing">Drawing</button>
+                    <button class="btn1" data-filter="writing">Writing</button>
+                    <button class="btn1" data-filter="craft">Craft</button>
+                    <button class="btn1" data-filter="storage">Storage</button>
+                    <button class="btn1" data-filter="calendars">Calendars</button>
+                    <button class="btn1" data-filter="gifts">Gifts</button>
+                </div>
+            </div>
+            <button class="scroll-btn next" id="scrollNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+
+
+        <section class="featured-products section">
+
+            <div class="products-grid">
+                <!-- Notebooks -->
+                <div class="product-card" data-category="notebooks">
+                    <div class="product-image">
+                        <img src="https://media.istockphoto.com/id/1203694037/photo/brown-leather-notebook.jpg?s=612x612&w=0&k=20&c=CZr-hWdPsrIuPlXNzUSY-5-YWjxd-r8a3L9qo79dWqY="
+                            alt="Premium Leather Notebook">
+                        <button class="cart-btn"
+                            onclick="addToCart(148, 'Premium Leather Notebook', 24.99, 'https://media.istockphoto.com/id/1203694037/photo/brown-leather-notebook.jpg?s=612x612&w=0&k=20&c=CZr-hWdPsrIuPlXNzUSY-5-YWjxd-r8a3L9qo79dWqY=')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Leather Notebook</h3>
+                        <p class="product-price">$24.99</p>
+                        <a href="product-details.html" class="explore-btn">
+                            View details
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Pens -->
+                <div class="product-card" data-category="pens">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/811139mWIQL._AC_SL1500_.jpg" alt="Luxury Pen ">
+                        <button class="cart-btn"
+                            onclick="addToCart(149, 'Luxury Pen', 49.99, 'https://m.media-amazon.com/images/I/811139mWIQL._AC_SL1500_.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Luxury Pen</h3>
+                        <p class="product-price">$49.99</p>
+                        <a href="luxurypen.html" class="explore-btn">
+                            View details
+
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Art Supplies -->
+                <div class="product-card" data-category="art">
+                    <div class="product-image">
+                        <img src="https://i5.walmartimages.com/asr/5a22afda-52fd-45ca-8322-d965bc95a97e.510ef2cf6d6bd9b5bed3c0926807eb11.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF"
+                            alt="Professional Art Kit">
+                        <button class="cart-btn"
+                            onclick="addToCart(150, 'Professional Art Kit', 79.99, 'https://i5.walmartimages.com/asr/5a22afda-52fd-45ca-8322-d965bc95a97e.510ef2cf6d6bd9b5bed3c0926807eb11.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Professional Art Kit</h3>
+                        <p class="product-price">$79.99</p>
+                        <a href="artkit.html" class="explore-btn">
+                            View details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Office Supplies -->
+                <div class="product-card" data-category="office">
+                    <div class="product-image">
+                        <img
+                            src="https://www.luxuryformen.com/media/catalog/product/cache/7f855d93df6faf4f4bb5212befedd5ec/2/1/21.jpg">
+                        <button class="cart-btn"
+                            onclick="addToCart(151, 'Executive Office Set', 129.99, 'https://www.luxuryformen.com/media/catalog/product/cache/7f855d93df6faf4f4bb5212befedd5ec/2/1/21.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Executive Office Set</h3>
+                        <p class="product-price">$129.99</p>
+                        <a href="officeset.html" class="explore-btn">
+                            View details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- School Supplies -->
+                <div class="product-card" data-category="school">
+                    <div class="product-image">
+                        <img src="https://img.freepik.com/premium-photo/assortment-school-supplies-background_488220-1584.jpg?semt=ais_hybrid"
+                            alt="Complete School Kit">
+                        <button class="cart-btn"
+                            onclick="addToCart(152, 'Complete School Kit', 89.99, 'https://img.freepik.com/premium-photo/assortment-school-supplies-background_488220-1584.jpg?semt=ais_hybrid')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Complete School Kit</h3>
+                        <p class="product-price">$89.99</p>
+                        <a href="schoolkit.html" class="explore-btn">
+                            View details
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Drawing Supplies -->
+                <div class="product-card" data-category="drawing">
+                    <div class="product-image">
+                        <img src="https://rung.com.pk/cdn/shop/products/deli-sketch-pencils-set-27-piece-art-supplies-professional-drawing-for-adults-pro-beginners-artist-degree-pencil-300_1024x1024.jpg?v=1614669965"
+                            alt="Artist Drawing Set">
+                        <button class="cart-btn"
+                            onclick="addToCart(153, 'Artist Drawing Set', 59.99, 'https://rung.com.pk/cdn/shop/products/deli-sketch-pencils-set-27-piece-art-supplies-professional-drawing-for-adults-pro-beginners-artist-degree-pencil-300_1024x1024.jpg?v=1614669965')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Artist Drawing Set</h3>
+                        <p class="product-price">$59.99</p>
+                        <a href="artist.html" class="explore-btn">
+                            View details
+
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Writing Supplies -->
+                <div class="product-card" data-category="writing">
+                    <div class="product-image">
+                        <img src="https://www.unibrands.co/cdn/shop/files/DTC_BTS2024_StylizedLaydown_1..jpg?v=1722623885"
+                            alt="Premium Writing Kit">
+                        <button class="cart-btn"
+                            onclick="addToCart(154, 'Premium Writing Kit', 49.99, 'https://www.unibrands.co/cdn/shop/files/DTC_BTS2024_StylizedLaydown_1..jpg?v=1722623885')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Writing Kit</h3>
+                        <p class="product-price">$44.99</p>
+                        <a href="writingkit.html" class="explore-btn">
+                            View details
+
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Craft Supplies -->
+                <div class="product-card" data-category="craft">
+                    <div class="product-image">
+                        <img src="https://cdn.thewirecutter.com/wp-content/media/2024/09/kidssubscriptionboxes-2048px-4269.jpg?auto=webp&quality=75&width=1024"
+                            alt="Creative Craft Set">
+                        <button class="cart-btn"
+                            onclick="addToCart(155, 'Creative Craft Set', 69.99, 'https://cdn.thewirecutter.com/wp-content/media/2024/09/kidssubscriptionboxes-2048px-4269.jpg?auto=webp&quality=75&width=1024')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Creative Craft Set</h3>
+                        <p class="product-price">$69.99</p>
+                        <a href="craftset.html" class="explore-btn">
+                            View details
+
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Storage -->
+                <div class="product-card" data-category="storage">
+                    <div class="product-image">
+                        <img src="https://image.made-in-china.com/226f3j00dMyoftwIAgcR/Drawer-Style-Wall-Mounted-Stationery-Storage-Box-Plastic-Storage-Containers-Desktop-Organizer.webp"
+                            alt="Deluxe Storage Set">
+                        <button class="cart-btn"
+                            onclick="addToCart(156, 'Deluxe Storage Set', 39.99, 'https://image.made-in-china.com/226f3j00dMyoftwIAgcR/Drawer-Style-Wall-Mounted-Stationery-Storage-Box-Plastic-Storage-Containers-Desktop-Organizer.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Deluxe Storage Set</h3>
+                        <p class="product-price">$39.99</p>
+                        <a href="storage.html" class="explore-btn">
+Viwe details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Calendars -->
+                <div class="product-card" data-category="calendars">
+                    <div class="product-image">
+                        <img src="https://tidyplans.com/cdn/shop/files/2025-printable-calendar-004-14.jpg?v=1682944724"
+                            alt="2025 Planner Calendar">
+                        <button class="cart-btn"
+                            onclick="addToCart(157, '2025 Planner Calendar', 29.99, 'https://tidyplans.com/cdn/shop/files/2025-printable-calendar-004-14.jpg?v=1682944724')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>2025 Planner Calendar</h3>
+                        <p class="product-price">$29.99</p>
+                        <a href="calendr1.html" class="explore-btn">
+                            View details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Gifts -->
+                <div class="product-card" data-category="gifts">
+                    <div class="product-image">
+                        <img src="https://image.made-in-china.com/202f0j00GvDkufZoaYqi/2024-Luxury-Business-Gift-Box-Set-Stationery-Set-Diary-Notebook-Umbrella-Pen.webp"
+                            alt="Luxury Gift Set">
+                        <button class="cart-btn"
+                            onclick="addToCart(158, 'Luxury Gift Set', 149.99, 'https://image.made-in-china.com/202f0j00GvDkufZoaYqi/2024-Luxury-Business-Gift-Box-Set-Stationery-Set-Diary-Notebook-Umbrella-Pen.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Luxury Gift Set</h3>
+                        <p class="product-price">$149.99</p>
+                        <a href="gift.html" class="explore-btn">
+                            View details
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="art">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(159, '10 PCS Bubble Gum Toy Blowing Glue', 6.99, 'https://img.drz.lazcdn.com/static/pk/p/59890c644a8cea24a2d5479c4759847e.jpg_720x720q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/59890c644a8cea24a2d5479c4759847e.jpg_720x720q80.jpg_.webp"
+                            alt="Bubble Gum Toy">
+                    </div>
+                    <div class="product-info">
+                        <h3>10 PCS Bubble Gum Toy Blowing Glue</h3>
+                        <p class="product-price">$6.99</p>
+                        <a href="art1.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card" data-category="art">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(160, 'Pack of 3 Mix Square Canvas', 25.99, 'https://i.etsystatic.com/35814225/r/il/92fe48/6042007545/il_300x300.6042007545_l6ey.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://i.etsystatic.com/35814225/r/il/92fe48/6042007545/il_300x300.6042007545_l6ey.jpg"
+                            alt="Mix Square Canvas">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pack of 3 Mix Square Canvas</h3>
+                        <p class="product-price">$25.99</p>
+                        <a href="art2.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card" data-category="art">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(161, '1Pc Fine Detail Brushes', 19.99, 'https://m.media-amazon.com/images/I/71jHijrnMML._AC_UF1000,1000_QL80_.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/71jHijrnMML._AC_UF1000,1000_QL80_.jpg">
+                        alt="Fine Detail Brushes">
+                    </div>
+                    <div class="product-info">
+                        <h3>1Pc Fine Detail Brushes</h3>
+                        <p class="product-price">$19.99</p>
+                        <a href="art3.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card" data-category="art">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(162, 'Pack of 12 Multi Shapes Paint Brush Set',9.99, 'https://img.drz.lazcdn.com/static/pk/p/fe2d4ec767a15ff6037e1ea84ca5a1a1.jpg_960x960q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/fe2d4ec767a15ff6037e1ea84ca5a1a1.jpg_960x960q80.jpg_.webp"
+                            alt="Multi Shapes Paint Brush Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pack of 12 Multi Shapes Paint Brush Set</h3>
+                        <p class="product-price">$9.99</p>
+                        <a href="art4.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="pens">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(163, 'Diamond Gel Pen', 4.99, 'https://img.drz.lazcdn.com/g/kf/S1bd4de2f35fc4ccd99cde2c26500e77au.jpg_720x720q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/g/kf/S1bd4de2f35fc4ccd99cde2c26500e77au.jpg_720x720q80.jpg_.webp"
+                            alt="Diamond Gel Pen">
+                    </div>
+                    <div class="product-info">
+                        <h3>Diamond Gel Pen</h3>
+                        <p class="product-price">$4.99</p>
+                        <a href="pen1.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Retractable Finger Reading Stick -->
+                <div class="product-card" data-category="pens">
+                    <div class="product-image">
+                        <button class="cart-btn" onclick="addToCart(164, 'Product Name', 99.99, 'product-image.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/71adcfa456eb4531708f16f9d1b2e35e.jpg_720x720q80.jpg_.webp"
+                            alt="Retractable Finger Reading Stick">
+                    </div>
+                    <div class="product-info">
+                        <h3>Retractable Finger Reading Stick</h3>
+                        <p class="product-price">$6.99</p>
+                        <a href="pen2.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Creative Kawaii Cute Gel Pens -->
+                <div class="product-card" data-category="pens">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(165, 'Creative Kawaii Cute Gel Pens', 13.99, 'https://img.drz.lazcdn.com/static/pk/p/c4574275d340594cc080891e49ac8fe3.jpg_720x720q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/c4574275d340594cc080891e49ac8fe3.jpg_720x720q80.jpg_.webp"
+                            alt="Creative Kawaii Cute Gel Pens">
+                    </div>
+                    <div class="product-info">
+                        <h3>Creative Kawaii Cute Gel Pens</h3>
+                        <p class="product-price">$13.99</p>
+                        <a href="pen3.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Ballpoint Pen, Cartoon Expression Capsule -->
+                <div class="product-card" data-category="pens">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(166, 'Ballpoint Pen, Cartoon Expression Capsule', 23.99, 'https://img.drz.lazcdn.com/g/kf/S5fc39c0eb66042729cd3c8638b44165c2.jpg_720x720q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/g/kf/S5fc39c0eb66042729cd3c8638b44165c2.jpg_720x720q80.jpg_.webp"
+                            alt="Ballpoint Pen, Cartoon Expression Capsule">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ballpoint Pen, Cartoon Expression Capsule</h3>
+                        <p class="product-price">$23.99</p>
+                        <a href="pen4.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Calligraphy Ink Pen Set -->
+                <div class="product-card" data-category="pens">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(167, 'Calligraphy Ink Pen Set', 25.99, 'https://isomarsshop.in/cdn/shop/products/51Zrr1UCfmL_2048x.jpg?v=1621666275')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://isomarsshop.in/cdn/shop/products/51Zrr1UCfmL_2048x.jpg?v=1621666275"
+                            alt="Calligraphy Ink Pen Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Calligraphy Ink Pen Set</h3>
+                        <p class="product-price">$25.99</p>
+                        <a href="pen5.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Unicorn With 10 Different Color Pens -->
+                <div class="product-card" data-category="pens">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(168, 'Unicorn With 10 Different Color Pens', 10.99, 'https://img.drz.lazcdn.com/static/pk/p/2a9c9e98ef44a444e02741fd2bc93f52.jpg_720x720q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/2a9c9e98ef44a444e02741fd2bc93f52.jpg_720x720q80.jpg_.webp"
+                            alt="Unicorn With 10 Different Color Pens">
+                    </div>
+                    <div class="product-info">
+                        <h3>Unicorn With 10 Different Color Pens</h3>
+                        <p class="product-price">$10.99</p>
+                        <a href="pen6.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Luxury Pen Card -->
+
+                <!-- Card 1: Heavy Duty Staple Stapler Gun -->
+                <div class="product-card" data-category="office">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(169, 'Heavy Duty Staple Stapler Gun', 99.99, 'https://thumbs.dreamstime.com/b/hand-tacker-staples-heavy-duty-hand-stapler-hand-tacker-staples-heavy-duty-hand-stapler-hand-staple-gun-227509913.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://thumbs.dreamstime.com/b/hand-tacker-staples-heavy-duty-hand-stapler-hand-tacker-staples-heavy-duty-hand-stapler-hand-staple-gun-227509913.jpg"
+                            alt="Heavy Duty Staple Stapler Gun">
+                    </div>
+                    <div class="product-info">
+                        <h3>Heavy Duty Staple Stapler Gun</h3>
+                        <p class="product-price">$24.99</p>
+                        <a href="office1.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: 3 in 1 Metal Mesh Pen Holder -->
+                <div class="product-card" data-category="office">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(170, '3 in 1 Metal Mesh Pen Holder', 16.99, 'https://5.imimg.com/data5/HJ/LU/KG/SELLER-29390614/5-500x500.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://5.imimg.com/data5/HJ/LU/KG/SELLER-29390614/5-500x500.jpg"
+                            alt="3 in 1 Metal Mesh Pen Holder">
+                    </div>
+                    <div class="product-info">
+                        <h3>3 in 1 Metal Mesh Pen Holder</h3>
+                        <p class="product-price">$16.99</p>
+                        <a href="office2.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Ergonomic Dual Mode Bluetooth Mouse -->
+                <div class="product-card" data-category="office">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(171, 'Ergonomic Dual Mode Bluetooth Mouse', 18.99, 'https://i.ebayimg.com/images/g/U5gAAOSwNOtjfti3/s-l400.jpg')">
+
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://i.ebayimg.com/images/g/U5gAAOSwNOtjfti3/s-l400.jpg"
+                            alt="Ergonomic Dual Mode Bluetooth Mouse">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ergonomic Dual Mode Bluetooth Mouse</h3>
+                        <p class="product-price">$18.99</p>
+                        <a href="office3.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Sun or Moon Minimalistic BuJo Notebook -->
+                <div class="product-card" data-category="office">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(172, 'Sun or Moon Minimalistic BuJo Notebook', 16.99, 'https://img.drz.lazcdn.com/g/kf/Sf8df611c728f4115899f7755ac9c07c7I.jpg_720x720q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/g/kf/Sf8df611c728f4115899f7755ac9c07c7I.jpg_720x720q80.jpg_.webp"
+                            alt="Sun or Moon Minimalistic BuJo Notebook">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sun or Moon Minimalistic BuJo Notebook</h3>
+                        <p class="product-price">$16.99</p>
+                        <a href="office4.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Arrow Flags Stickers -->
+                <div class="product-card" data-category="office">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(173, 'Arrow Flags Stickers', 2.99, 'https://img.joomcdn.net/665004b1c5b22b6b2dadefa37a273d2fa9f5af9c_original.jpeg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.joomcdn.net/665004b1c5b22b6b2dadefa37a273d2fa9f5af9c_original.jpeg"
+                            alt="Arrow Flags Stickers">
+                    </div>
+                    <div class="product-info">
+                        <h3>Arrow Flags Stickers</h3>
+                        <p class="product-price">$2.99</p>
+                        <a href="office5.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 6: HP DeskJet Ink Advantage Printer -->
+                <div class="product-card" data-category="office">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(174, 'HP DeskJet Ink Advantage Printer', 99.99, 'https://www.argglobal.org/wp-content/uploads/2022/06/HP-DeskJet-1212-Printer-3.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://www.argglobal.org/wp-content/uploads/2022/06/HP-DeskJet-1212-Printer-3.webp"
+                            alt="HP DeskJet Ink Advantage Printer">
+                    </div>
+                    <div class="product-info">
+                        <h3>HP DeskJet Ink Advantage Printer</h3>
+                        <p class="product-price">$50.99</p>
+                        <a href="office6.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Luxury Pen Card -->
+
+                <div class="product-card" data-category="school">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(175, 'School And Laptop Backpack', 59.99, 'https://i5.walmartimages.com/seo/Lightweight-School-Bag-Casual-Daypack-College-Laptop-Backpack-Men-Women-Water-Resistant-Travel-Rucksack-Sports-High-Middle-Bookbag-girls-Red_0ed50ba4-78ed-4755-93aa-93f7dd6143d2.260918dd8affa797db63eb1147737dfa.jpeg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://i5.walmartimages.com/seo/Lightweight-School-Bag-Casual-Daypack-College-Laptop-Backpack-Men-Women-Water-Resistant-Travel-Rucksack-Sports-High-Middle-Bookbag-girls-Red_0ed50ba4-78ed-4755-93aa-93f7dd6143d2.260918dd8affa797db63eb1147737dfa.jpeg"
+                            alt="School And Laptop Backpack">
+                    </div>
+                    <div class="product-info">
+                        <h3>School And Laptop Backpack</h3>
+                        <p class="product-price">$59.99</p>
+                        <a href="school1.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="school">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(176, 'Premium Pencil Case', 19.99, 'https://m.media-amazon.com/images/I/616jodotXWL._AC_UY1000_.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/616jodotXWL._AC_UY1000_.jpg"
+                            alt="Premium Pencil Case">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Pencil Case</h3>
+                        <p class="product-price">$19.99</p>
+                        <a href="school3.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="school">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(177, 'Complete Geometry Set', 19.99, 'https://m.media-amazon.com/images/I/71KL1nCgaLL.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/71KL1nCgaLL.jpg" alt="Complete Geometry Set"
+                            alt="Premium Pencil Case">
+                    </div>
+                    <div class="product-info">
+                        <h3>Complete Geometry Set</h3>
+                        <p class="product-price">$19.99</p>
+                        <a href="school4.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+
+
+                <div class="product-card" data-category="school">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(178, 'Academic Planner', 22.99, 'https://m.media-amazon.com/images/I/817YRDKBmUL._AC_UF894,1000_QL80_.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/817YRDKBmUL._AC_UF894,1000_QL80_.jpg"
+                            alt="Academic Planner">
+                    </div>
+                    <div class="product-info">
+                        <h3>Academic Planner</h3>
+                        <p class="product-price">$22.99</p>
+                        <a href="school5.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="school">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(179, 'Scientific Calculator', 24.99, 'https://m.media-amazon.com/images/I/61Ad5OCtC6L.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/61Ad5OCtC6L.jpg" alt="Scientific Calculator">
+                    </div>
+                    <div class="product-info">
+                        <h3>Scientific Calculator</h3>
+                        <p class="product-price">$24.99</p>
+                        <a href="school2.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="school">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(180, 'USB Flash Drive', 15.99, 'https://www.shutterstock.com/image-photo/usb-flash-drive-placed-on-260nw-245544232.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img
+                            src="https://www.shutterstock.com/image-photo/usb-flash-drive-placed-on-260nw-245544232.jpg">
+                    </div>
+                    <div class="product-info">
+                        <h3>USB Flash Drive</h3>
+                        <p class="product-price">$15.99</p>
+                        <a href="school6.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="drawing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(181, 'Portable Drawing Easel', 79.99, 'https://m.media-amazon.com/images/I/61nKO498srL._AC_UF894,1000_QL80_.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/61nKO498srL._AC_UF894,1000_QL80_.jpg"
+                            alt="Portable Drawing Easel">
+                    </div>
+                    <div class="product-info">
+                        <h3>Portable Drawing Easel</h3>
+                        <p class="product-price">$79.99</p>
+                        <a href="drawing6.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="drawing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(182, 'Artist Marker Set', 99.99, 'https://img.kwcdn.com/product/fancy/43ab0c45-b647-4480-9d01-de88ac6a1fb6.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.kwcdn.com/product/fancy/43ab0c45-b647-4480-9d01-de88ac6a1fb6.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp"
+                            alt="Artist Marker Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Artist Marker Set</h3>
+                        <p class="product-price">$49.99</p>
+                        <a href="drawing5.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="drawing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(183, 'Professional Sketch Pad', 24.99, 'https://m.media-amazon.com/images/I/71+BYMEy6iL.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/71+BYMEy6iL.jpg" alt="Professional Sketch Pad">
+                    </div>
+                    <div class="product-info">
+                        <h3>Professional Sketch Pad</h3>
+                        <p class="product-price">$24.99</p>
+                        <a href="drawing3.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="drawing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(184, 'Artist Pencil Set', 39.99, 'https://cdn11.bigcommerce.com/s-1e5d9p00e3/images/stencil/1280x1280/products/23281/140354/faber-castell-polychromos-artists-coloured-pencil-and-pitt-graphite-matt-pencil-set-of-40__38759.1727564662.jpg?c=1')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://cdn11.bigcommerce.com/s-1e5d9p00e3/images/stencil/1280x1280/products/23281/140354/faber-castell-polychromos-artists-coloured-pencil-and-pitt-graphite-matt-pencil-set-of-40__38759.1727564662.jpg?c=1"
+                            alt="Artist Pencil Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Artist Pencil Set</h3>
+                        <p class="product-price">$39.99</p>
+                        <a href="drawing1.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="art">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(185, '12 Acrylic Paint Set', 5.99, 'https://img.drz.lazcdn.com/static/pk/p/ceff157b20c7bff39a841edc1ace865f.jpg_720x720q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/ceff157b20c7bff39a841edc1ace865f.jpg_720x720q80.jpg_.webp"
+                            alt="Acrylic Paint Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>12 Acrylic Paint Set</h3>
+                        <p class="product-price">$5.99</p>
+                        <a href="art5.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="notebooks">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(186, 'For You A Thousand Times Over Spiral Notebook', 14.99, 'https://img.drz.lazcdn.com/static/pk/p/a31d2145d61fa57af53d1656e1acef83.png_720x720q80.png_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/a31d2145d61fa57af53d1656e1acef83.png_720x720q80.png_.webp"
+                            alt="For You A Thousand Times Over Spiral Notebook">
+                    </div>
+                    <div class="product-info">
+                        <h3>For You A Thousand Times Over Spiral Notebook</h3>
+                        <p class="product-price">$14.99</p>
+                        <a href="card5.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="product-card" data-category="notebooks">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(187, 'Death note aesthetic notebook', 10.99, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuT-IPmmi6umSfNyNGNudm2JQu8lve7OsDog&s')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuT-IPmmi6umSfNyNGNudm2JQu8lve7OsDog&s"
+                            alt="Death note aesthetic notebook">
+                    </div>
+                    <div class="product-info">
+                        <h3>Death note aesthetic notebook</h3>
+                        <p class="product-price">$10.99</p>
+                        <a href="card1.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="product-card" data-category="notebooks">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(188, 'Cute Bears Spiral Notebook', 5.99, 'https://img.drz.lazcdn.com/static/pk/p/8b3255e1e19520ccbf71fe5be55f400d.png_720x720q80.png_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/8b3255e1e19520ccbf71fe5be55f400d.png_720x720q80.png_.webp"
+                            alt="Cute Bears Spiral Notebook">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cute Bears Spiral Notebook</h3>
+                        <p class="product-price">$5.99</p>
+                        <a href="card2.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="product-card" data-category="notebooks">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(189, 'Unicorn Soft Plush Diary for Kids', 10.99, 'https://img.drz.lazcdn.com/static/pk/p/f66be44b94a642ddddeb5114009616e2.jpg_720x720q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/f66be44b94a642ddddeb5114009616e2.jpg_720x720q80.jpg_.webp"
+                            alt="Unicorn Soft Plush Diary for Kids">
+                    </div>
+                    <div class="product-info">
+                        <h3>Unicorn Soft Plush Diary for Kids</h3>
+                        <p class="product-price">$10.99</p>
+                        <a href="card3.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="product-card" data-category="notebooks">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(190, 'A5 Fur Diary Notebook for Girls', 12.99, 'https://img.drz.lazcdn.com/static/pk/p/3cfbacce6a7f390404d7a1d61891f24e.jpg_720x720q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/3cfbacce6a7f390404d7a1d61891f24e.jpg_720x720q80.jpg_.webp"
+                            alt="A5 Fur Diary Notebook for Girls">
+                    </div>
+                    <div class="product-info">
+                        <h3>A5 Fur Diary Notebook for Girls</h3>
+                        <p class="product-price">$12.99</p>
+                        <a href="card4.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+                <!-- Product Card 7 -->
+                <div class="product-card" data-category="pens">
+                    <div class="product-image">
+                        <button class="cart-btn" onclick="addToCart(191, 'Product Name', 99.99, 'product-image.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/811139mWIQL._AC_SL1500_.jpg" alt="Luxury Pen">
+                    </div>
+                    <div class="product-info">
+                        <h3>Luxury Pen</h3>
+                        <p class="product-price">$49.99</p>
+                        <a href="luxurypen.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="product-card" data-category="notebooks">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(192, 'Customised Notebook A4 or A5', 15.99, 'https://img.drz.lazcdn.com/static/pk/p/2315ab161ae885edc93a3ff86ce48c4b.jpg_720x720q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/2315ab161ae885edc93a3ff86ce48c4b.jpg_720x720q80.jpg_.webp"
+                            alt="Customised Notebook A4 or A5">
+                    </div>
+                    <div class="product-info">
+                        <h3>Customised Notebook A4 or A5</h3>
+                        <p class="product-price">$15.99</p>
+                        <a href="card6.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="drawing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(193, 'Charcoal Drawing Set', 15.99, 'https://m.media-amazon.com/images/I/8180T-1vkqL.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/8180T-1vkqL.jpg" alt="Charcoal Drawing Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Charcoal Drawing Set</h3>
+                        <p class="product-price">$15.99</p>
+                        <a href="drawing2.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="drawing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(194, 'Drawing Tools Set', 22.99, 'https://motivs.lv/images/toys/97444_09.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://motivs.lv/images/toys/97444_09.jpg" alt="Drawing Tools Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Drawing Tools Set</h3>
+                        <p class="product-price">$22.99</p>
+                        <a href="drawing4.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card" data-category="art">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(195, '5 Sheets Cute Nail Stickers', 10.99, 'https://i.etsystatic.com/40822358/r/il/dce947/6103673180/il_570xN.6103673180_90by.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://i.etsystatic.com/40822358/r/il/dce947/6103673180/il_570xN.6103673180_90by.jpg"
+                            alt="Nail Stickers">
+                    </div>
+                    <div class="product-info">
+                        <h3>5 Sheets Cute Nail Stickers</h3>
+                        <p class="product-price">$10.99</p>
+                        <a href="art6.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="writing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(196, 'Artist Sketching Pens', 34.99, 'https://m.media-amazon.com/images/I/8151Qm8qM8L._AC_SL1500_.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/8151Qm8qM8L._AC_SL1500_.jpg"
+                            alt="Artist Sketching Pens">
+                    </div>
+                    <div class="product-info">
+                        <h3>Artist Sketching Pens</h3>
+                        <p class="product-price">$34.99</p>
+                        <a href="writing2.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="writing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(197, 'Executive Rollerball Set', 79.99, 'https://img.drz.lazcdn.com/static/pk/p/1c97682310f6fbf047a512d49da0e827.jpg_960x960q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/pk/p/1c97682310f6fbf047a512d49da0e827.jpg_960x960q80.jpg_.webp"
+                            alt="Executive Rollerball Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Executive Rollerball Set</h3>
+                        <p class="product-price">$79.99</p>
+                        <a href="writing3.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="writing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(198, 'Professional Calligraphy Kit', 89.99, 'https://m.media-amazon.com/images/I/714Pm70DWXL.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/714Pm70DWXL.jpg"
+                            alt="Professional Calligraphy Kit">
+                    </div>
+                    <div class="product-info">
+                        <h3>Professional Calligraphy Kit</h3>
+                        <p class="product-price">$89.99</p>
+                        <a href="writing4.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="writing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(199, 'Luxury Fountain Pen Set', 149.99, 'https://ae01.alicdn.com/kf/Ha7e4328758bb413fbfb04ddb3c8ff7377.jpg_960x960.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://ae01.alicdn.com/kf/Ha7e4328758bb413fbfb04ddb3c8ff7377.jpg_960x960.jpg"
+                            alt="Luxury Fountain Pen Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Luxury Fountain Pen Set</h3>
+                        <p class="product-price">$149.99</p>
+                        <a href="writing5.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="writing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(200, 'Premium Gel Pen Collection', 29.99, 'https://blingspot.pk/cdn/shop/files/color-roller-ball-gel-ink-pen-05mm-arpm2401_0d5aeb8e-f64a-4f00-943b-98b7a01ec591.png?v=1685795992&width=1080')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://blingspot.pk/cdn/shop/files/color-roller-ball-gel-ink-pen-05mm-arpm2401_0d5aeb8e-f64a-4f00-943b-98b7a01ec591.png?v=1685795992&width=1080"
+                            alt="Premium Gel Pen Collection">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Gel Pen Collection</h3>
+                        <p class="product-price">$29.99</p>
+                        <a href="writing1.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gifts">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(201, 'Executive Gift Set', 249.99, 'https://blingspot.pk/cdn/shop/files/WhatsAppImage2024-09-21at12.31.36PM_4.jpg?v=1726904467&width=300')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://blingspot.pk/cdn/shop/files/WhatsAppImage2024-09-21at12.31.36PM_4.jpg?v=1726904467&width=300"
+                            alt="Executive Gift Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Executive Gift Set</h3>
+                        <p class="product-price">$249.99</p>
+                        <a href="gift1.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="gifts">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(202, 'Premium Journal Set', 89.99, 'https://scholarstationery.com/wp-content/uploads/2023/12/PREMIUM-PLANNER-JOURNAL-WEB-11-900x1200.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://scholarstationery.com/wp-content/uploads/2023/12/PREMIUM-PLANNER-JOURNAL-WEB-11-900x1200.jpg"
+                            alt="Premium Journal Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Journal Set</h3>
+                        <p class="product-price">$89.99</p>
+                        <a href="gift3.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gifts">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(203, 'Luxury Gift Pens', 199.99, 'https://media.istockphoto.com/id/1398329976/photo/fountain-pen-on-a-marble-and-gray-background-selective-focus.jpg?s=612x612&w=0&k=20&c=tgX07eu-vIchuLkIjusHLe8gpCKXWoJpY0GBZ0ABsLw=')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://media.istockphoto.com/id/1398329976/photo/fountain-pen-on-a-marble-and-gray-background-selective-focus.jpg?s=612x612&w=0&k=20&c=tgX07eu-vIchuLkIjusHLe8gpCKXWoJpY0GBZ0ABsLw="
+                            alt="Luxury Gift Pens">
+                    </div>
+                    <div class="product-info">
+                        <h3>Luxury Gift Pens</h3>
+                        <p class="product-price">$199.99</p>
+                        <a href="gift4.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gifts">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(204, 'Student Success Pack', 129.99, 'https://ae01.alicdn.com/kf/S56709d3998064f4c836ecbe590f5e644A.jpg_640x640q90.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://ae01.alicdn.com/kf/S56709d3998064f4c836ecbe590f5e644A.jpg_640x640q90.jpg"
+                            alt="Student Success Pack">
+                    </div>
+                    <div class="product-info">
+                        <h3>Student Success Pack</h3>
+                        <p class="product-price">$129.99</p>
+                        <a href="gift5.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gifts">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(205, 'Calligraphy Gift Set', 159.99, 'https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/f8cd152e320eac91c654b6ab731eaf4a.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/f8cd152e320eac91c654b6ab731eaf4a.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp"
+                            alt="Calligraphy Gift Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Calligraphy Gift Set</h3>
+                        <p class="product-price">$159.99</p>
+                        <a href="gift6.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="storage">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(206, 'Factory Cheap Sticky Notes', 39.99, 'https://p.globalsources.com/IMAGES/PDT/B1198922852/sticky-notes.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://p.globalsources.com/IMAGES/PDT/B1198922852/sticky-notes.jpg"
+                            alt="Factory Cheap Sticky Notes">
+                    </div>
+                    <div class="product-info">
+                        <h3>Factory Cheap Sticky Notes</h3>
+                        <p class="product-price">$39.99</p>
+                        <a href="storage1.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gifts">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(207, 'Art Supply Gift Set', 179.99, 'https://m.media-amazon.com/images/I/81qQrGur9QL._AC_SL1500_.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://m.media-amazon.com/images/I/81qQrGur9QL._AC_SL1500_.jpg"
+                            alt="Art Supply Gift Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Art Supply Gift Set</h3>
+                        <p class="product-price">$179.99</p>
+                        <a href="gift2.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="storage">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(208, 'Modern Magazine Rack', 44.99, 'https://s.alicdn.com/@sc04/kf/Hcadb6726bc194dc7a5d22c377155157dG.jpg?avif=close')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://s.alicdn.com/@sc04/kf/Hcadb6726bc194dc7a5d22c377155157dG.jpg?avif=close"
+                            alt="Modern Magazine Rack">
+                    </div>
+                    <div class="product-info">
+                        <h3>Modern Magazine Rack</h3>
+                        <p class="product-price">$44.99</p>
+                        <a href="storage2.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="storage">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(209, 'Executive Pen Stand', 29.99, 'https://sc04.alicdn.com/kf/Hab84f44dc8eb49638ce300014b08cc28D.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://sc04.alicdn.com/kf/Hab84f44dc8eb49638ce300014b08cc28D.jpg"
+                            alt="Executive Pen Stand">
+                    </div>
+                    <div class="product-info">
+                        <h3>Executive Pen Stand</h3>
+                        <p class="product-price">$29.99</p>
+                        <a href="storage3.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="storage">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(210, 'Premium Document Bag', 34.99, 'https://img.kwcdn.com/product/fancy/403927a9-dbf2-4d5c-8d31-388b8716319a.jpg?imageView2/2/w/500/q/60/format/webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.kwcdn.com/product/fancy/403927a9-dbf2-4d5c-8d31-388b8716319a.jpg?imageView2/2/w/500/q/60/format/webp"
+                            alt="Premium Document Bag">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Document Bag</h3>
+                        <p class="product-price">$34.99</p>
+                        <a href="storage4.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="storage">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(211, 'Premium Desk Organizer', 54.99, 'https://s.alicdn.com/@sc04/kf/H29b6e0b96e034d599d503077b5a0827cP.jpg_720x720q50.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://s.alicdn.com/@sc04/kf/H29b6e0b96e034d599d503077b5a0827cP.jpg_720x720q50.jpg"
+                            alt="Premium Desk Organizer">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Desk Organizer</h3>
+                        <p class="product-price">$54.99</p>
+                        <a href="storage5.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="storage">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(212, 'Premium Cabinet', 256.99, 'https://s.alicdn.com/@sc04/kf/Hd5709515d8b3428b8037a6bc97c9c391D.png_720x720q50.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://s.alicdn.com/@sc04/kf/Hd5709515d8b3428b8037a6bc97c9c391D.png_720x720q50.jpg"
+                            alt="Premium Cabinet">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Cabinet</h3>
+                        <p class="product-price">$256.99</p>
+                        <a href="storage6.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="writing">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(213, 'Premium Ballpoint Set', 49.99, 'https://img4.dhresource.com/webp/m/0x0/f3/albu/km/y/08/4a23d900-c8e7-493a-8214-cef375473ff1.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img4.dhresource.com/webp/m/0x0/f3/albu/km/y/08/4a23d900-c8e7-493a-8214-cef375473ff1.jpg"
+                            alt="Premium Ballpoint Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Ballpoint Set</h3>
+                        <p class="product-price">$49.99</p>
+                        <a href="writing6.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="calendars">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(214, '2024 Wall Calendar', 24.99, 'https://s.alicdn.com/@sc04/kf/H77c02c5a891a4f929b6506ee660d02b1p.jpg_720x720q50.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://s.alicdn.com/@sc04/kf/H77c02c5a891a4f929b6506ee660d02b1p.jpg_720x720q50.jpg"
+                            alt="2024 Wall Calendar">
+                    </div>
+                    <div class="product-info">
+                        <h3>2024 Wall Calendar</h3>
+                        <p class="product-price">$24.99</p>
+                        <a href="1.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="calendars">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(215, '2024 Desk Calendar', 19.99, 'https://linefriendssquare.us/cdn/shop/files/8800251569965_BT21_24BASIC_2025__1200x1200_1_b63b20ef-9507-4a75-81a0-2826fe1d0c72.png?v=1738568564')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://linefriendssquare.us/cdn/shop/files/8800251569965_BT21_24BASIC_2025__1200x1200_1_b63b20ef-9507-4a75-81a0-2826fe1d0c72.png?v=1738568564"
+                            alt="2024 Desk Calendar">
+                    </div>
+                    <div class="product-info">
+                        <h3>2024 Desk Calendar</h3>
+                        <p class="product-price">$19.99</p>
+                        <a href="2.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="calendars">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(216, 'Daily Planner', 39.99, 'https://s.alicdn.com/@sc04/kf/H414c3a20847c4e7495d6d4f7092283afR.jpg_720x720q50.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://s.alicdn.com/@sc04/kf/H414c3a20847c4e7495d6d4f7092283afR.jpg_720x720q50.jpg"
+                            alt="Daily Planner">
+                    </div>
+                    <div class="product-info">
+                        <h3>Daily Planner</h3>
+                        <p class="product-price">$39.99</p>
+                        <a href="3.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="calendars">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(217, 'Monthly Planner', 27.99, 'https://s.alicdn.com/@sc04/kf/Hae0a7c67f6844e9aad4f53c94f8cdadai.jpg_720x720q50.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://s.alicdn.com/@sc04/kf/Hae0a7c67f6844e9aad4f53c94f8cdadai.jpg_720x720q50.jpg"
+                            alt="Monthly Planner">
+                    </div>
+                    <div class="product-info">
+                        <h3>Monthly Planner</h3>
+                        <p class="product-price">$27.99</p>
+                        <a href="4.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="calendars">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(218, 'Academic Year Planner', 29.99, 'https://s.alicdn.com/@sc04/kf/H4f9a86205fec4bed8e2b7f6b04bea54dd.jpg_720x720q50.jpg')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://s.alicdn.com/@sc04/kf/H4f9a86205fec4bed8e2b7f6b04bea54dd.jpg_720x720q50.jpg"
+                            alt="Academic Year Planner">
+                    </div>
+                    <div class="product-info">
+                        <h3>Academic Year Planner</h3>
+                        <p class="product-price">$29.99</p>
+                        <a href="5.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="craft">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(219, 'Decorative Paper Set', 29.99, 'https://img.drz.lazcdn.com/static/bd/p/c2023c7094d9482888c7206a98f34dd9.jpg_960x960q80.jpg_.webp')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://img.drz.lazcdn.com/static/bd/p/c2023c7094d9482888c7206a98f34dd9.jpg_960x960q80.jpg_.webp"
+                            alt="Decorative Paper Set">
+                    </div>
+                    <div class="product-info">
+                        <h3>Decorative Paper Set</h3>
+                        <p class="product-price">$29.99</p>
+                        <a href="7.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+                <div class="product-card" data-category="storage">
+                    <div class="product-image">
+                        <button class="cart-btn"
+                            onclick="addToCart(220, 'Modern Magazine Rack', 44.99, 'https://s.alicdn.com/@sc04/kf/Hcadb6726bc194dc7a5d22c377155157dG.jpg?avif=close')">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <img src="https://s.alicdn.com/@sc04/kf/Hcadb6726bc194dc7a5d22c377155157dG.jpg?avif=close"
+                            alt="Modern Magazine Rack">
+                    </div>
+                    <div class="product-info">
+                        <h3>Modern Magazine Rack</h3>
+                        <p class="product-price">$44.99</p>
+                        <a href="storage2.html" class="explore-btn">View details</a>
+                    </div>
+                </div>
+           
+            <div class="product-card" data-category="craft">
+                <div class="product-image">
+                    <button class="cart-btn"
+                        onclick="addToCart(221, 'Craft Supply Organizer', 17.99, 'https://www.scrapbook.com/articles/assets/files/4145/12x12%20White%204%20Full%20Image.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <img src="https://www.scrapbook.com/articles/assets/files/4145/12x12%20White%204%20Full%20Image.jpg"
+                        alt="Craft Supply Organizer">
+                </div>
+                <div class="product-info">
+                    <h3>Craft Supply Organizer</h3>
+                    <p class="product-price">$17.99</p>
+                    <a href="8.html" class="explore-btn">View details</a>
+                </div>
+            </div>
+
+         
+         
+    </div></div>
+    </section>
+
+    <!--product end-->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Universal Stationery</h3>
+                <p>Crafting your writing experience since 1995</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon facebook" data-tooltip="Follow on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon instagram" data-tooltip="Follow on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon twitter" data-tooltip="Follow on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Universal Stationery. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+    
+    
+    <!-- Add this before closing </body> tag -->
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="loginModal">
+    <div class="auth-container">
+        <div class="auth-card">
+            <span class="close-btn">&times;</span>
+            <div class="auth-header">
+                <h2>Login</h2>
+                <p>Welcome back! Please login to your account.</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="auth-btn">Login</button>
+                <p class="switch-text">Don't have an account? <a href="#" class="switch-auth-btn">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+    </div>
+    
+    <div class="auth-modal" id="signupModal">
+    <div class="auth-container">
+        <div class="auth-card">
+            <span class="close-btn">&times;</span>
+            <div class="auth-header">
+                <h2>Sign Up</h2>
+                <p>Create your account to get started</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-btn">Sign Up</button>
+                <p class="switch-text">Already have an account? <a href="#" class="switch-auth-btn">Login</a></p>
+            </form>
+        </div>
+    </div>
+    </div>
+    
+    
+
+
+
+</body>
+
+</html>

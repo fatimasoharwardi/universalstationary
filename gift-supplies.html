@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>School Supplies - Universal Stationery</title>
+        <link rel="stylesheet" href="product-styles.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="gift-supplies.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="script.js" defer></script>
+        <!-- Add this line in the head section of all HTML files -->
+<link rel="stylesheet" href="responsive.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    </head>
+<body>
+    <!-- ...existing header code... -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <div class="logo-container">
+                    <img src="Screenshot_2025-01-30-10-59-01-36-removebg-preview.png" alt="Universal Stationery" class="logo-img">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-universal">Universal</span>
+                    <span class="brand-stationery">STATIONERY</span>
+                </div>
+            </a>
+        </div>
+        <!-- Move menu icon to the right -->
+        <div class="nav-controls">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="menu-icon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" ><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="product.html" class="active"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="nav-divider"></div>
+            <!-- Auth links will be moved here in mobile view -->
+            <div class="auth-nav">
+                <a href="#" class="auth-link login" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="#" class="auth-link signup" id="signupBtn">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+            <div class="nav-cart">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+        
+<!-- Add Cart Modal before closing body tag -->
+<div class="cart-modal">
+    <div class="cart-container">
+        <button class="close-cart">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2>Shopping Cart</h2>
+        <div class="cart-items">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$0.00</span>
+            </div>
+            <button class="checkout-btn">
+                Proceed to Checkout
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    </header>
+    <main class="gift-supplies-section">
+        <div class="section-header">
+            <h1>Premium Gift Collection</h1>
+            <p>Perfect presents for stationery lovers</p>
+        </div>
+
+        <div class="gift-supplies-grid">
+            <!-- Luxury Pen Set -->
+            <div class="gift-card" data-category="premium">
+                <div class="product-image">
+                    <img src="luxury-pen-set.jpg" alt="Luxury Pen Gift Set">
+                    <button class="cart-btn" onclick="addToCart(77, 'Luxury Pen Gift Set', 199.99, 'luxury-pen-set.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Luxury Pen Gift Set</h3>
+                    <p class="product-price">$199.99</p>
+                    <p class="product-description">Premium fountain pen with accessories</p>
+                </div>
+            </div>
+
+            <!-- Executive Gift Set -->
+            <div class="gift-card" data-category="executive">
+                <div class="product-image">
+                    <img src="executive-set.jpg" alt="Executive Gift Set">
+                    <button class="cart-btn" onclick="addToCart(78, 'Executive Gift Set', 249.99, 'executive-set.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Executive Gift Set</h3>
+                    <p class="product-price">$249.99</p>
+                    <p class="product-description">Premium desk accessories collection</p>
+                </div>
+            </div>
+
+            <!-- Art Supply Gift Box -->
+            <div class="gift-card" data-category="art">
+                <div class="product-image">
+                    <img src="art-gift-box.jpg" alt="Art Supply Gift Box">
+                    <button class="cart-btn" onclick="addToCart(79, 'Art Supply Gift Box', 179.99, 'art-gift-box.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Art Supply Gift Box</h3>
+                    <p class="product-price">$179.99</p>
+                    <p class="product-description">Complete artist essentials kit</p>
+                </div>
+            </div>
+
+            <!-- Journal Gift Set -->
+            <div class="gift-card" data-category="journals">
+                <div class="product-image">
+                    <img src="journal-set.jpg" alt="Premium Journal Set">
+                    <button class="cart-btn" onclick="addToCart(80, 'Premium Journal Set', 89.99, 'journal-set.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Premium Journal Set</h3>
+                    <p class="product-price">$89.99</p>
+                    <p class="product-description">Leather-bound journals with accessories</p>
+                </div>
+            </div>
+
+            <!-- Student Gift Pack -->
+            <div class="gift-card" data-category="student">
+                <div class="product-image">
+                    <img src="student-pack.jpg" alt="Student Success Pack">
+                    <button class="cart-btn" onclick="addToCart(81, 'Student Success Pack', 129.99, 'student-pack.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Student Success Pack</h3>
+                    <p class="product-price">$129.99</p>
+                    <p class="product-description">Complete academic essentials</p>
+                </div>
+            </div>
+
+            <!-- Calligraphy Set -->
+            <div class="gift-card" data-category="calligraphy">
+                <div class="product-image">
+                    <img src="calligraphy-set.jpg" alt="Calligraphy Gift Set">
+                    <button class="cart-btn" onclick="addToCart(82, 'Calligraphy Gift Set', 159.99, 'calligraphy-set.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Calligraphy Gift Set</h3>
+                    <p class="product-price">$159.99</p>
+                    <p class="product-description">Professional calligraphy tools</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- ...existing footer and modals code... -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Universal Stationery</h3>
+                <p>Crafting your writing experience since 1995</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon facebook" data-tooltip="Follow on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon instagram" data-tooltip="Follow on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon twitter" data-tooltip="Follow on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="hover-effect">Home</a></li>
+                    <li><a href="about.html" class="hover-effect">About Us</a></li>
+                    <li><a href="product.html" class="hover-effect">Products</a></li>
+                    <li><a href="contact.html" class="hover-effect">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit" class="hover-effect"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Universal Stationery. All rights reserved.</p>
+        </div>
+    </footer>
+
+ 
+   
+<!-- Add this before closing </body> tag -->
+<!-- Auth Modal -->
+<div class="auth-modal" id="loginModal">
+    <div class="auth-container">
+        <div class="auth-card">
+            <span class="close-btn">&times;</span>
+            <div class="auth-header">
+                <h2>Login</h2>
+                <p>Welcome back! Please login to your account.</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="auth-btn">Login</button>
+                <p class="switch-text">Don't have an account? <a href="#" class="switch-auth-btn">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="auth-modal" id="signupModal">
+    <div class="auth-container">
+        <div class="auth-card">
+            <span class="close-btn">&times;</span>
+            <div class="auth-header">
+                <h2>Sign Up</h2>
+                <p>Create your account to get started</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-btn">Sign Up</button>
+                <p class="switch-text">Already have an account? <a href="#" class="switch-auth-btn">Login</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

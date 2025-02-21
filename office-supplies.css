@@ -1,0 +1,66 @@
+.office-supplies-section {
+    padding: 6rem 5% 4rem;
+    background: var(--light-bg);
+}
+
+.office-supplies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.office-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 2px solid transparent;
+}
+
+/* Custom hover effect for office supplies */
+.office-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.office-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+/* Professional gradient overlay */
+.office-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.office-card:hover::after {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .office-supplies-section {
+        padding: 4rem 4% 3rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .office-supplies-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}

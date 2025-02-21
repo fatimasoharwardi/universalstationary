@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us - Universal Stationery</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="contact.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Add this line in the head section of all HTML files -->
+<link rel="stylesheet" href="responsive.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <div class="logo-container">
+                    <img src="Screenshot_2025-01-30-10-59-01-36-removebg-preview.png" alt="Universal Stationery" class="logo-img">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-universal">Universal</span>
+                    <span class="brand-stationery">STATIONERY</span>
+                </div>
+            </a>
+        </div>
+        <!-- Move menu icon to the right -->
+        <div class="nav-controls">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="menu-icon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" ><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="product.html"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="nav-divider"></div>
+            <!-- Auth links will be moved here in mobile view -->
+            <div class="auth-nav">
+                <a href="#" class="auth-link login" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="#" class="auth-link signup" id="signupBtn">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+            <div class="nav-cart">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+        
+<!-- Add Cart Modal before closing body tag -->
+<div class="cart-modal">
+    <div class="cart-container">
+        <button class="close-cart">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2>Shopping Cart</h2>
+        <div class="cart-items">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$0.00</span>
+            </div>
+            <button class="checkout-btn">
+                Proceed to Checkout
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    </header>
+
+
+
+
+
+
+
+    <!-- Add menu sidebar and overlay -->
+    <div class="menu-overlay"></div>
+    <div class="menu-sidebar">
+        <!-- Same menu sidebar content as index.html -->
+    </div>
+
+    <!-- Existing contact content but styled -->
+    <div class="parent">
+        <div class="div1">
+            <h1>Get in Touch</h1>
+            <h2>Address</h2>
+            <p>123 stationery street<br>pen district, writing city<br>st 123</p>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d28933.5230763257!2d67.059712!3d24.9766466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1738508623696!5m2!1sen!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+            <h2>Reach Out</h2>
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email Us</h3>
+                        <p>contact@stationeryhub.com<br>support@stationeryhub.com</p>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Call Us</h3>
+                        <p>(555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Business Hours</h3>
+                        <p>Monday-Friday: 9:00am - 6:00pm<br>Saturday: 10:00am - 4:00pm<br>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="div2" id="contactForm">
+            <h1>Send us a message</h1>
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <p class="luy">Name:
+                    </p>
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <p class="luy">Email:
+                    </p>
+                    <label for="email">email </label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                </div>
+                <div class="form-group">
+                    <p class="luy">Phone:
+                    </p>
+                    <label for="phone">Phone</label>
+                    <input type="number" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <p class="luy">Company:
+                    </p>
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="Enter your company name (optional)">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <p class="luy">Subject:
+                    </p>
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Product Support</option>
+                        <option value="order">Order Status</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <p class="luy">Message:
+                    </p>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+                </div>
+            </div>
+            <button class="btn submit-btn" type="submit">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+    </div>
+
+    <!-- Include Auth Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-container">
+            <div class="auth-card">
+                <!-- Login Side -->
+                <div class="card-front">
+                    <div class="auth-header">
+                        <div class="auth-logo">
+                            <img src="Screenshot_2025-01-30-10-59-01-36-removebg-preview.png" alt="Logo">
+                        </div>
+                        <h2>Welcome Back</h2>
+                        <p>Login to your account</p>
+                    </div>
+                    <form id="loginForm" class="auth-form">
+                        <div class="form-group">
+                            <input type="email" required placeholder="Enter your email address">
+                            <label>Email Address</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" required placeholder="Enter your password">
+                            <label>Password</label>
+                        </div>
+                        <button type="submit" class="auth-btn">Login</button>
+                        <p class="auth-switch">
+                            Don't have an account? <a href="#" class="flip-btn">Sign Up</a>
+                        </p>
+                    </form>
+                </div>
+                
+                <!-- Signup Side -->
+                <div class="card-back">
+                    <div class="auth-header">
+                        <div class="auth-logo">
+                            <img src="Screenshot_2025-01-30-10-59-01-36-removebg-preview.png" alt="Logo">
+                        </div>
+                        <h2>Create Account</h2>
+                        <p>Join our community today</p>
+                    </div>
+                    <form id="signupForm" class="auth-form">
+                        <div class="form-group">
+                            <input type="text" required placeholder="Enter your full name">
+                            <label>Full Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" required placeholder="Enter your email">
+                            <label>Email Address</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" required placeholder="Create password">
+                            <label>Password</label>
+                        </div>
+                        <button type="submit" class="auth-btn">Sign Up</button>
+                        <p class="auth-switch">
+                            Already have an account? <a href="#" class="flip-btn">Login</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <button class="close-modal" aria-label="Close modal">×</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Universal Stationery</h3>
+                <p>Crafting your writing experience since 1995</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon facebook" data-tooltip="Follow on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon instagram" data-tooltip="Follow on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon twitter" data-tooltip="Follow on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Universal Stationery. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+    
+    
+    <!-- Add this before closing </body> tag -->
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="loginModal">
+    <div class="auth-container">
+        <div class="auth-card">
+            <span class="close-btn">&times;</span>
+            <div class="auth-header">
+                <h2>Login</h2>
+                <p>Welcome back! Please login to your account.</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="auth-btn">Login</button>
+                <p class="switch-text">Don't have an account? <a href="#" class="switch-auth-btn">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+    </div>
+    
+    <div class="auth-modal" id="signupModal">
+    <div class="auth-container">
+        <div class="auth-card">
+            <span class="close-btn">&times;</span>
+            <div class="auth-header">
+                <h2>Sign Up</h2>
+                <p>Create your account to get started</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-btn">Sign Up</button>
+                <p class="switch-text">Already have an account? <a href="#" class="switch-auth-btn">Login</a></p>
+            </form>
+        </div>
+    </div>
+    </div>
+    
+    
+
+</body>
+</html>

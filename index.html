@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Stationery</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="product-styles.css">
+    <script src="checkout.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <div class="logo-container">
+                    <img src="Screenshot_2025-01-30-10-59-01-36-removebg-preview.png" alt="Universal Stationery"
+                        class="logo-img">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-universal">Universal</span>
+                    <span class="brand-stationery">STATIONERY</span>
+                </div>
+            </a>
+        </div>
+        <div class="nav-controls">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="menu-icon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="product.html"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="nav-divider"></div>
+            <div class="auth-nav">
+                <a href="#" class="auth-link login" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="#" class="auth-link signup" id="signupBtn">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+            <div class="nav-cart">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Add Cart Modal before closing body tag -->
+        <div class="cart-modal">
+            <div class="cart-container">
+                <button class="close-cart">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2>Shopping Cart</h2>
+                <div class="cart-items">
+                    <!-- Cart items will be inserted here -->
+                </div>
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span>$0.00</span>
+                    </div>
+                    <button class="checkout-btn">
+                        Proceed to Checkout
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Write Your Story<br><span class="highlight">With Style</span></h1>
+            <p>Discover a curated collection of premium writing instruments and stationery essentials.</p>
+            <div class="hero-buttons">
+                <a href="product.html" class="hero-btn explore">
+                    Explore Products <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="brands.html" class="hero-btn brands">
+                    View Brands <i class="fas fa-building"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGVufGVufDB8fDB8fHww"
+                alt="Premium Pen">
+        </div>
+
+    </section>
+
+
+    <section class="products">
+        <h2 class="section-title">Featured Products</h2>
+        <!-- <div class="title-line"></div> -->
+        <div class="product-grid">
+            <!-- Writing Supplies -->
+         <!-- Writing Supplies -->
+               <!-- Gifts -->
+               <div class="product-card" data-category="gifts">
+                <div class="product-image">
+                    <img src="https://image.made-in-china.com/202f0j00GvDkufZoaYqi/2024-Luxury-Business-Gift-Box-Set-Stationery-Set-Diary-Notebook-Umbrella-Pen.webp"
+                        alt="Luxury Gift Set">
+                    <button class="cart-btn"
+                        onclick="addToCart(158, 'Luxury Gift Set', 149.99, 'https://image.made-in-china.com/202f0j00GvDkufZoaYqi/2024-Luxury-Business-Gift-Box-Set-Stationery-Set-Diary-Notebook-Umbrella-Pen.webp')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Luxury Gift Set</h3>
+                    <p class="product-price">$149.99</p>
+                    <a href="gift.html" class="explore-btn">
+                        View details
+                    </a>
+                </div>
+            </div>
+            <div class="product-card" data-category="art">
+                <div class="product-image">
+                    <button class="cart-btn"
+                        onclick="addToCart(159, '10 PCS Bubble Gum Toy Blowing Glue', 6.99, 'https://img.drz.lazcdn.com/static/pk/p/59890c644a8cea24a2d5479c4759847e.jpg_720x720q80.jpg_.webp')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <img src="https://img.drz.lazcdn.com/static/pk/p/59890c644a8cea24a2d5479c4759847e.jpg_720x720q80.jpg_.webp"
+                        alt="Bubble Gum Toy">
+                </div>
+                <div class="product-info">
+                    <h3>10 PCS Bubble Gum Toy Blowing Glue</h3>
+                    <p class="product-price">$6.99</p>
+                    <a href="art1.html" class="explore-btn">View details</a>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card" data-category="art">
+                <div class="product-image">
+                    <button class="cart-btn"
+                        onclick="addToCart(160, 'Pack of 3 Mix Square Canvas', 25.99, 'https://i.etsystatic.com/35814225/r/il/92fe48/6042007545/il_300x300.6042007545_l6ey.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <img src="https://i.etsystatic.com/35814225/r/il/92fe48/6042007545/il_300x300.6042007545_l6ey.jpg"
+                        alt="Mix Square Canvas">
+                </div>
+                <div class="product-info">
+                    <h3>Pack of 3 Mix Square Canvas</h3>
+                    <p class="product-price">$25.99</p>
+                    <a href="art2.html" class="explore-btn">View details</a>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card" data-category="art">
+                <div class="product-image">
+                    <button class="cart-btn"
+                        onclick="addToCart(161, '1Pc Fine Detail Brushes', 19.99, 'https://m.media-amazon.com/images/I/71jHijrnMML._AC_UF1000,1000_QL80_.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <img src="https://m.media-amazon.com/images/I/71jHijrnMML._AC_UF1000,1000_QL80_.jpg">
+                    alt="Fine Detail Brushes">
+                </div>
+                <div class="product-info">
+                    <h3>1Pc Fine Detail Brushes</h3>
+                    <p class="product-price">$19.99</p>
+                    <a href="art3.html" class="explore-btn">View details</a>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- Replace the existing About section with this updated version -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Our Journey</h2>
+                <p class="about-text">
+                    Since 1995, Universal Stationery has been crafting exceptional writing experiences.
+                    We believe that quality writing instruments inspire creativity and elevate everyday moments.
+                    Our commitment to excellence and innovation continues to shape the future of stationery.
+                </p>
+                <ul class="about-features">
+                    <li>
+                        <i class="fas fa-gem"></i>
+                        <span>Premium Materials</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-award"></i>
+                        <span>Expert Craftsmanship</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Lifetime Warranty</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-heart"></i>
+                        <span>Customer Satisfaction</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="https://www.gotokyo.org/en/new-and-now/new-and-trending/230828/images/en_main_1.jpg"
+                    alt="Our Craftsmanship">
+                <div class="experience-badge">
+                    <span>25+</span>
+                    <p>Years of Excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ...rest of existing code... -->
+
+    <section class="testimonials section">
+        <div class="section-header">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="section-subtitle">Real experiences from our valued customers</p>
+        </div>
+        <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgmtxAycNzJHGjLlCeP03HaJq1AD6uyzp3IQ&s"
+                        alt="John Anderson" class="testimonial-img">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+
+                </div>
+                <p class="testimonial-text">"The quality of their fountain pens is exceptional. I've been a loyal
+                    customer for over 5 years."</p>
+                <div class="testimonial-author">
+                    <h4>John Anderson</h4>
+                    <p>Professional Writer</p>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <!-- Similar structure with different content -->
+                <div class="testimonial-header">
+                    <img src="https://img.freepik.com/premium-vector/vibrant-cartoon-profile-illustration-featuring-cheerful-young-person-with-hooded-sweatshirt-profile-pic-customizable-cartoon-illustration_538213-142537.jpg"
+                        alt="Sarah Miller" class="testimonial-img">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Their customer service is outstanding. Quick responses and helpful
+                    solutions every time."</p>
+                <div class="testimonial-author">
+                    <h4>Sarah Miller</h4>
+                    <p>Artist & Designer</p>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <!-- Similar structure with different content -->
+                <div class="testimonial-header">
+                    <img src="https://img.freepik.com/premium-vector/cartoon-illustration-smiling-boy-with-black-hair-wearing-red-white-shirt-attached-files-customizable-cartoon-illustration_538213-128303.jpg"
+                        alt="Michael Chen" class="testimonial-img">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Best stationery shop in town! The variety and quality are unmatched."</p>
+                <div class="testimonial-author">
+                    <h4>Michael Chen</h4>
+                    <p>Business Executive</p>
+                </div>
+            </div>
+
+            <!-- Add more testimonials as needed -->
+        </div>
+    </section>
+
+
+
+    <section class="brands">
+        <h2 class="section-title">Featured Brands</h2>
+        <div class="title-line"></div>
+        <div class="brand-cards">
+            <div class="brand-card" onclick="location.href='parker.html';" style="cursor: pointer;">
+                <img src="https://banner2.cleanpng.com/20180421/ccq/avedo6ml9.webp" alt="Parker">
+                <h3>Parker</h3>
+                <p>Premium writing instruments since 1888</p>
+            </div>
+            <div class="brand-card" onclick="location.href='moleskine.html';" style="cursor: pointer;">
+                <img src="https://www.designboom.com/contest/files/copy_0_moleskine_1.2__818x81801.jpg" alt="Montblanc">
+                <h3>Moleskine</h3>
+                <p>Luxury craftsmanship and timeless designs</p>
+            </div>
+            <div class="brand-card" onclick="location.href='faber-castell.html';" style="cursor: pointer;">
+                <img src="https://cdn.worldvectorlogo.com/logos/faber-castell.svg" alt="Faber-Castell">
+                <h3>Faber-Castell</h3>
+                <p>Quality art supplies and writing tools</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2 class="section-title">Popular Products</h2>
+        <div class="title-line"></div>
+        <div class="product-grid">
+            <!-- Writing Supplies -->
+            <div class="product-card" data-category="writing">
+                <div class="product-image">
+                    <img src="https://www.unibrands.co/cdn/shop/files/DTC_BTS2024_StylizedLaydown_1..jpg?v=1722623885"
+                        alt="Premium Writing Kit">
+                    <button class="cart-btn"
+                        onclick="addToCart(7, 'Premium Writing Kit', 49.99, 'https://www.unibrands.co/cdn/shop/files/DTC_BTS2024_StylizedLaydown_1..jpg?v=1722623885')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Premium Writing Kit</h3>
+                    <p class="product-price">$44.99</p>
+                    <a href="writingkit.html" class="explore-btn">
+                        View details
+
+                    </a>
+                </div>
+            </div>
+
+            <!-- Craft Supplies -->
+            <div class="product-card" data-category="craft">
+                <div class="product-image">
+                    <img src="https://cdn.thewirecutter.com/wp-content/media/2024/09/kidssubscriptionboxes-2048px-4269.jpg?auto=webp&quality=75&width=1024"
+                        alt="Creative Craft Set">
+                    <button class="cart-btn"
+                        onclick="addToCart(8, 'Creative Craft Set', 69.99, 'https://cdn.thewirecutter.com/wp-content/media/2024/09/kidssubscriptionboxes-2048px-4269.jpg?auto=webp&quality=75&width=1024')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Creative Craft Set</h3>
+                    <p class="product-price">$69.99</p>
+                    <a href="craftset.html" class="explore-btn">
+                        View details
+
+                    </a>
+                </div>
+            </div>
+
+            <!-- Storage -->
+            <div class="product-card" data-category="storage">
+                <div class="product-image">
+                    <img src="https://image.made-in-china.com/226f3j00dMyoftwIAgcR/Drawer-Style-Wall-Mounted-Stationery-Storage-Box-Plastic-Storage-Containers-Desktop-Organizer.webp"
+                        alt="Deluxe Storage Set">
+                    <button class="cart-btn"
+                        onclick="addToCart(9, 'Deluxe Storage Set', 39.99, 'https://image.made-in-china.com/226f3j00dMyoftwIAgcR/Drawer-Style-Wall-Mounted-Stationery-Storage-Box-Plastic-Storage-Containers-Desktop-Organizer.webp')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Deluxe Storage Set</h3>
+                    <p class="product-price">$39.99</p>
+                    <a href="storage.html" class="explore-btn">
+                        View details
+                    </a>
+                </div>
+            </div>
+
+            <!-- Calendars -->
+            <div class="product-card" data-category="calendars">
+                <div class="product-image">
+                    <img src="https://tidyplans.com/cdn/shop/files/2025-printable-calendar-004-14.jpg?v=1682944724"
+                        alt="2025 Planner Calendar">
+                    <button class="cart-btn"
+                        onclick="addToCart(10, '2025 Planner Calendar', 29.99, 'https://tidyplans.com/cdn/shop/files/2025-printable-calendar-004-14.jpg?v=1682944724')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>2025 Planner Calendar</h3>
+                    <p class="product-price">$29.99</p>
+                    <a href="calendr1.html" class="explore-btn">
+                        View details
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Universal Stationery</h3>
+                <p>Crafting your writing experience since 1995</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon facebook" data-tooltip="Follow on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon instagram" data-tooltip="Follow on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon twitter" data-tooltip="Follow on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="hover-effect">Home</a></li>
+                    <li><a href="about.html" class="hover-effect">About Us</a></li>
+                    <li><a href="product.html" class="hover-effect">Products</a></li>
+                    <li><a href="contact.html" class="hover-effect">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit" class="hover-effect"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Universal Stationery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add this before closing </body> tag -->
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="loginModal">
+        <div class="auth-container">
+            <div class="auth-card">
+                <span class="close-btn">&times;</span>
+                <div class="auth-header">
+                    <h2>Login</h2>
+                    <p>Welcome back! Please login to your account.</p>
+                </div>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-options">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="auth-btn">Login</button>
+                    <p class="switch-text">Don't have an account? <a href="#" class="switch-auth-btn">Sign Up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-modal" id="signupModal">
+        <div class="auth-container">
+            <div class="auth-card">
+                <span class="close-btn">&times;</span>
+                <div class="auth-header">
+                    <h2>Sign Up</h2>
+                    <p>Create your account to get started</p>
+                </div>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">Sign Up</button>
+                    <p class="switch-text">Already have an account? <a href="#" class="switch-auth-btn">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

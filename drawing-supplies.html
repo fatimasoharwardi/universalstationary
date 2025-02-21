@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Supplies - Universal Stationery</title>
+    <link rel="stylesheet" href="product-styles.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="drawing-supplies.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
+    <!-- Add this line in the head section of all HTML files -->
+<link rel="stylesheet" href="responsive.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <div class="logo-container">
+                    <img src="Screenshot_2025-01-30-10-59-01-36-removebg-preview.png" alt="Universal Stationery" class="logo-img">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-universal">Universal</span>
+                    <span class="brand-stationery">STATIONERY</span>
+                </div>
+            </a>
+        </div>
+        <!-- Move menu icon to the right -->
+        <div class="nav-controls">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="menu-icon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" ><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="product.html" class="active"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="nav-divider"></div>
+            <!-- Auth links will be moved here in mobile view -->
+            <div class="auth-nav">
+                <a href="#" class="auth-link login" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="#" class="auth-link signup" id="signupBtn">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+            <div class="nav-cart">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+        
+<!-- Add Cart Modal before closing body tag -->
+<div class="cart-modal">
+    <div class="cart-container">
+        <button class="close-cart">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2>Shopping Cart</h2>
+        <div class="cart-items">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$0.00</span>
+            </div>
+            <button class="checkout-btn">
+                Proceed to Checkout
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    </header>
+    <!-- ...existing header code... -->
+    <main class="drawing-supplies-section">
+        <div class="section-header">
+            <h1>Drawing Supplies Collection</h1>
+            <p>Professional tools for artists and sketchers</p>
+        </div>
+
+        <div class="drawing-supplies-grid">
+            <!-- Pencil Set -->
+            <div class="drawing-card" data-category="pencils">
+                <div class="product-image">
+                    <img src="drawing-pencils.jpg" alt="Artist Pencil Set">
+                    <button class="cart-btn" onclick="addToCart(58, 'Artist Pencil Set', 39.99, 'drawing-pencils.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Artist Pencil Set</h3>
+                    <p class="product-price">$39.99</p>
+                    <p class="product-description">Professional drawing pencil collection (2H-8B)</p>
+                </div>
+            </div>
+
+            <!-- Charcoal Set -->
+            <div class="drawing-card" data-category="charcoal">
+                <div class="product-image">
+                    <img src="charcoal-set.jpg" alt="Charcoal Drawing Set">
+                    <button class="cart-btn" onclick="addToCart(59, 'Charcoal Drawing Set', 29.99, 'charcoal-set.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Charcoal Drawing Set</h3>
+                    <p class="product-price">$29.99</p>
+                    <p class="product-description">Complete charcoal and graphite set</p>
+                </div>
+            </div>
+
+            <!-- Sketch Pad -->
+            <div class="drawing-card" data-category="paper">
+                <div class="product-image">
+                    <img src="sketch-pad.jpg" alt="Professional Sketch Pad">
+                    <button class="cart-btn" onclick="addToCart(60, 'Professional Sketch Pad', 24.99, 'sketch-pad.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Professional Sketch Pad</h3>
+                    <p class="product-price">$24.99</p>
+                    <p class="product-description">High-quality paper for sketching</p>
+                </div>
+            </div>
+
+            <!-- Drawing Tools -->
+            <div class="drawing-card" data-category="tools">
+                <div class="product-image">
+                    <img src="drawing-tools.jpg" alt="Drawing Tools Set">
+                    <button class="cart-btn" onclick="addToCart(61, 'Drawing Tools Set', 34.99, 'drawing-tools.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Drawing Tools Set</h3>
+                    <p class="product-price">$34.99</p>
+                    <p class="product-description">Essential drawing accessories</p>
+                </div>
+            </div>
+
+            <!-- Marker Set -->
+            <div class="drawing-card" data-category="markers">
+                <div class="product-image">
+                    <img src="marker-set.jpg" alt="Artist Marker Set">
+                    <button class="cart-btn" onclick="addToCart(62, 'Artist Marker Set', 49.99, 'marker-set.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Artist Marker Set</h3>
+                    <p class="product-price">$49.99</p>
+                    <p class="product-description">Dual-tip professional markers</p>
+                </div>
+            </div>
+
+            <!-- Easel -->
+            <div class="drawing-card" data-category="equipment">
+                <div class="product-image">
+                    <img src="easel.jpg" alt="Portable Drawing Easel">
+                    <button class="cart-btn" onclick="addToCart(63, 'Portable Drawing Easel', 79.99, 'easel.jpg')">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <h3>Portable Drawing Easel</h3>
+                    <p class="product-price">$79.99</p>
+                    <p class="product-description">Adjustable aluminum drawing stand</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- ...existing footer and modals code... -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Universal Stationery</h3>
+                <p>Crafting your writing experience since 1995</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon facebook" data-tooltip="Follow on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon instagram" data-tooltip="Follow on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon twitter" data-tooltip="Follow on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="hover-effect">Home</a></li>
+                    <li><a href="about.html" class="hover-effect">About Us</a></li>
+                    <li><a href="product.html" class="hover-effect">Products</a></li>
+                    <li><a href="contact.html" class="hover-effect">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit" class="hover-effect"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Universal Stationery. All rights reserved.</p>
+        </div>
+    </footer>
+
+ 
+   
+<!-- Add this before closing </body> tag -->
+<!-- Auth Modal -->
+<div class="auth-modal" id="loginModal">
+    <div class="auth-container">
+        <div class="auth-card">
+            <span class="close-btn">&times;</span>
+            <div class="auth-header">
+                <h2>Login</h2>
+                <p>Welcome back! Please login to your account.</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="auth-btn">Login</button>
+                <p class="switch-text">Don't have an account? <a href="#" class="switch-auth-btn">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="auth-modal" id="signupModal">
+    <div class="auth-container">
+        <div class="auth-card">
+            <span class="close-btn">&times;</span>
+            <div class="auth-header">
+                <h2>Sign Up</h2>
+                <p>Create your account to get started</p>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-btn">Sign Up</button>
+                <p class="switch-text">Already have an account? <a href="#" class="switch-auth-btn">Login</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

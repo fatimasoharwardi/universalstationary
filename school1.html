@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="product-styles.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="product-details.css">
+<link rel="stylesheet" href="responsive.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <div class="logo-container">
+                    <img src="Screenshot_2025-01-30-10-59-01-36-removebg-preview.png" alt="Universal Stationery" class="logo-img">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-universal">Universal</span>
+                    <span class="brand-stationery">STATIONERY</span>
+                </div>
+            </a>
+        </div>
+        <!-- Move menu icon to the right -->
+        <div class="nav-controls">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span class="menu-icon">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="product.html" class="active"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html" ><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="nav-divider"></div>
+            <!-- Auth links will be moved here in mobile view -->
+            <div class="auth-nav">
+                <a href="#" class="auth-link login" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="#" class="auth-link signup" id="signupBtn">
+                    <i class="fas fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+            <div class="nav-cart">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+        
+<!-- Add Cart Modal before closing body tag -->
+<div class="cart-modal">
+    <div class="cart-container">
+        <button class="close-cart">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2>Shopping Cart</h2>
+        <div class="cart-items">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$0.00</span>
+            </div>
+            <button class="checkout-btn">
+                Proceed to Checkout
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+    </header>
+<main class="product-details-container">
+    <div class="product-details">
+        <div class="product-image-section">
+            <div class="main-image">
+                <img src="https://i5.walmartimages.com/seo/Lightweight-School-Bag-Casual-Daypack-College-Laptop-Backpack-Men-Women-Water-Resistant-Travel-Rucksack-Sports-High-Middle-Bookbag-girls-Red_0ed50ba4-78ed-4755-93aa-93f7dd6143d2.260918dd8affa797db63eb1147737dfa.jpeg" alt="Premium Leather Notebook">
+                
+            </div>
+        </div>
+        
+        <div class="product-info-section">
+            <div class="product-header">
+                <h1>School And Laptop Backpack</h1>
+                <div class="product-meta">
+                    <span class="sku">SKU: NB001</span>
+                    <span class="category">Category: Stationery</span>
+                </div>
+            </div>
+
+            <div class="product-rating">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-count">(190 Reviews)</span>
+            </div>
+
+            <div class="price-details">
+                <div class="base-price">Unit Price: $59.99</div>
+                <div class="total-price">Total: <span id="total-price">$59.99</span></div>
+            </div>
+
+            <div class="product-description">
+                <h3>Product Details</h3>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span><b>Material :</b> Parachute</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Comfortable elastic Double strap for school.</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Premium quality durable and waterproof material.</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Multi-sections With 4 Strong Zips.</span>
+                    </div>
+                </div>
+
+                <div class="description-text">
+                    <p>Large capacity, multiple compartments to carry books and stationary in organized way.Imported quality bag have enough space to store all kid's essential stuff with ease.</p>
+                </div>
+            </div>
+
+            <div class="quantity-wrapper">
+                <div class="quantity-control">
+                    <button class="qty-btn" onclick="updateQuantity(-1)">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <input type="number" id="quantity" value="1" min="1" max="10" readonly>
+                    <button class="qty-btn" onclick="updateQuantity(1)">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="total-price">Total: <span id="total-price">$59.99</span></div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="hello" class="cart-btn-hello" onclick="addToCartAndShow(229, 'School And Laptop Backpack', 59.99, 'https:i5.walmartimages.com/seo/Lightweight-School-Bag-Casual-Daypack-College-Laptop-Backpack-Men-Women-Water-Resistant-Travel-Rucksack-Sports-High-Middle-Bookbag-girls-Red_0ed50ba4-78ed-4755-93aa-93f7dd6143d2.260918dd8affa797db63eb1147737dfa.jpeg')">
+                    <i class="fas fa-cart-plus"></i>
+                    Add to Cart
+                </button>
+                <button class="buy-btn" onclick="proceedToCheckout()">
+                    <i class="fas fa-bolt"></i>
+                    Buy Now
+                </button>
+            </div>
+
+            <div class="additional-info">
+                <div class="info-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Free shipping on orders over $50</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-undo"></i>
+                    <span>30-day return policy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Universal Stationery</h3>
+            <p>Crafting your writing experience since 1995</p>
+            <div class="social-links">
+                <a href="#" class="social-icon facebook" data-tooltip="Follow on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon instagram" data-tooltip="Follow on Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon twitter" data-tooltip="Follow on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="index.html" class="hover-effect">Home</a></li>
+                <li><a href="about.html" class="hover-effect">About Us</a></li>
+                <li><a href="product.html" class="hover-effect">Products</a></li>
+                <li><a href="contact.html" class="hover-effect">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Newsletter</h4>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit" class="hover-effect"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Universal Stationery. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- Add this before closing </body> tag -->
+<!-- Auth Modal -->
+<div class="auth-modal" id="loginModal">
+<div class="auth-container">
+    <div class="auth-card">
+        <span class="close-btn">&times;</span>
+        <div class="auth-header">
+            <h2>Login</h2>
+            <p>Welcome back! Please login to your account.</p>
+        </div>
+        <form class="auth-form">
+            <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <div class="form-options">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+            <button type="submit" class="auth-btn">Login</button>
+            <p class="switch-text">Don't have an account? <a href="#" class="switch-auth-btn">Sign Up</a></p>
+        </form>
+    </div>
+</div>
+</div>
+
+<div class="auth-modal" id="signupModal">
+<div class="auth-container">
+    <div class="auth-card">
+        <span class="close-btn">&times;</span>
+        <div class="auth-header">
+            <h2>Sign Up</h2>
+            <p>Create your account to get started</p>
+        </div>
+        <form class="auth-form">
+            <div class="form-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="auth-btn">Sign Up</button>
+            <p class="switch-text">Already have an account? <a href="#" class="switch-auth-btn">Login</a></p>
+        </form>
+    </div>
+</div>
+</div>
+</body>
+</html>
+
