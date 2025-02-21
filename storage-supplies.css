@@ -1,0 +1,82 @@
+.storage-supplies-section {
+    padding: 6rem 5% 4rem;
+    background: var(--light-bg);
+}
+
+.storage-supplies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.storage-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 2px solid transparent;
+}
+
+/* Hover Effects */
+.storage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.storage-card:hover .product-image img {
+    transform: scale(1.15);
+}
+
+.storage-card .cart-btn:hover {
+    background: var(--dark-color);
+    transform: translateY(-2px);
+}
+
+/* Product Info Styles */
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.product-price {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.product-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .storage-supplies-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .storage-supplies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .storage-supplies-grid {
+        grid-template-columns: 1fr;
+    }
+}
