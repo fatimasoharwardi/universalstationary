@@ -5959,6 +5959,12 @@ nav ul li a.active::after {
     border-radius: 12px;
     font-size: 1rem;
     transition: all 0.3s ease;
+    color: #333333; /* Added explicit text color */
+}
+
+.auth-form input::placeholder {
+    color: #9e9e9e;
+    opacity: 1;
 }
 
 .auth-form input:focus {
@@ -6174,7 +6180,7 @@ nav ul li a.active::after {
 }
 
 .forgot-password:hover {
-    color: var(--dark-color);
+    color: var (--dark-color);
 }
 
 /* Updated Button Styles */
